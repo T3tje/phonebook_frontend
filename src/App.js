@@ -69,6 +69,13 @@ useEffect(() =>{
           setConfirmationMsg(null)
         }, 4000)
       })
+      .catch(error => {
+        console.log(error.response.data.error);
+        setErrorMsg(`${error.response.data.error}`)
+        setTimeout(() => {
+          setErrorMsg(null)
+        }, 8000)
+      })
     }
     setNewName("")
     setNewNumber("")
